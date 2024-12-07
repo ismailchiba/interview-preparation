@@ -21,3 +21,34 @@ const twoSum = (nums, target) => {
     // If no solution is found, return an empty array
     return [];
 };
+
+
+const twoSum1 = (nums, target) => {
+    const hashmap ={};
+    let result = null
+
+    nums.forEach((item, index)=> { let complement = target - item;
+        if (complement in hashmap) {
+            result = [hashmap[complement], index];
+        }
+        hashmap[item] = index;
+    })
+    return result;
+}
+
+
+const twoSum2 = (nums, target) => {
+    const hashmap = {};
+    let result = null;
+
+    nums.some((item, index) => {
+        let element = target - item;
+        if (element in hashmap) {
+            result = [hashmap[element], index];
+            return true;//stop iterating 
+        }
+        hashmap[item] = index;
+        return false;//to continue the iteration
+    })
+    return result;
+}

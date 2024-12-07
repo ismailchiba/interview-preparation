@@ -1,5 +1,5 @@
 import unittest
-from twosumv2 import Solution
+from Leetcode.python.twoSum.twosumv1 import Solution
 
 class TestTwoSum(unittest.TestCase):
     def setUp(self):
